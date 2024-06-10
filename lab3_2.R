@@ -1,0 +1,76 @@
+rm(list=ls(all=TRUE))
+l=1
+m=seq(0,5,0.01)
+f4=function(m,l){
+  f4=l*(exp(-l*m))
+  f4
+}
+y1=f4(m,l)
+plot(m,
+     y1,col='pink',
+     main="graph",
+     xlab="xlab",
+     ylab="ylab",
+     typ="l",
+     lty=1,
+     lwd=3,
+     ylim=c(0,1.5)
+     )
+lines(m,
+      f4(m,2),
+      col="green",
+      typ="l",
+      lty=2,
+      lwd=2
+      )
+lines(m,
+      f4(m,1.5),
+      col="blue",
+      typ="l",
+      lty=3,
+      lwd=1
+      )
+legend("topright",
+       legend=c("lam=1","lam=2","lam=1.5"),
+       text.col=c("pink","green","blue"),
+       lty=c(1,2,3),
+       lwd=c(3,2,1),
+       col=c("pink","green","blue")
+       )
+
+x=seq(0,5,0.01)
+f=function(x,a,b){
+  f=(a/b)*((x/b)^(a-1))*(exp(-(x/b)^a))
+  f
+}
+y=f(x,1,1.5)
+plot(x,
+     y,
+     col="lavender",
+     typ="l",
+     lty=1,
+     lwd=3,
+     ylim=c(0,2)
+     )
+lines(x,
+      f(x,1,4),
+      col="blue",
+      typ="l",
+      lty=2,
+      lwd=2
+      )
+lines(x,
+      f(x,2,3),
+      col="red",
+      typ="l",
+      lty=3,
+      lwd=1
+)
+
+legend("topright",
+       legend=c("a=1,b=1.5","a=1,b=4","a=2,b=3"),
+       text.col=c("lavender","blue","red"),
+       lty=c(1,2,3),
+       lwd=c(3,2,1),
+       col=c("lavender","blue","red")
+)
